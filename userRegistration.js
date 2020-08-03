@@ -1,10 +1,18 @@
 const userInput = require('prompt-sync')();
-let regex = new RegExp("^[A-Z]{1}[A-Za-z]{2}");
-const firstName = userInput("Enter first Name -  ");
+let regexName = new RegExp("^[A-Z]{1}[A-Za-z]{2}");
 
-if(regex.test(firstName))
-	console.log("Valid");
-else
-	console.log("Invalid");
+
+function checkValidUserInput( userInput, regexPattern){
+		if( regexName.test(userInput))
+			console.log("Valid")
+		else
+			console.log("invalid")
+}
+
+let firstName = userInput("Enter First Name");
+checkValidUserInput( firstName, regexName);
+
+let lastName = userInput("Enter last name");
+checkValidUserInput( lastName, regexName);
 
 
