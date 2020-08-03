@@ -2,7 +2,7 @@ const userInput = require('prompt-sync')();
 let regexName = new RegExp("^[A-Z]{1}[A-Za-z]{2}");
 let emailPattern = new RegExp("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$");
 let mobilePattern = new RegExp("^[0-9][0-9] [0-9]{10}$");
-let passwordPattern = new RegExp("(?=.*[A-Z]).{8,}$");
+let passwordPattern = new RegExp("(?=.*[0-9])(?=.*[A-Z]).{8,}$");
 
 function checkValidUserInput( userInput, regexPattern){
 		if( regexPattern.test(userInput))
@@ -23,6 +23,6 @@ checkValidUserInput( email, emailPattern);
 let phoneNumber  = userInput("Enter mobile with country code");
 checkValidUserInput(phoneNumber,  mobilePattern);
 
-let password = userInput("Enter password with min 8 character");
+let password = userInput("Enter password");
 checkValidUserInput(password, passwordPattern);
 
